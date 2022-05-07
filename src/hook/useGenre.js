@@ -11,11 +11,7 @@ const GET_Genre = gql`
   }
 `;
 export const useGenre = (id) => {
-  const { error, loading, data } = useQuery(GET_Genre, {
-    variables: {
-      id,
-    },
-  });
+  const { error, loading, data } = useQuery(GET_Genre);
 
   return {
     error,

@@ -9,28 +9,18 @@ import thunk from "redux-thunk";
 import reducers from "./store/reducers";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { BrowserRouter } from "react-router-dom";
-import { createHttpLink } from "apollo-link-http";
-import { ApolloLink } from "apollo-link";
+import { HttpLink } from "@apollo/client";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
-const customFetch = (uri, options) => {
-  return fetch(uri, {
-    ...options,
-    headers: {
-      ...options.headers,
-      "x-custom-header": process.env.ASTRA_DB_APPLICATION_TOKEN,
-    },
-  });
-};
-
-const fetchLink = createHttpLink({
-  uri: process.env.ASTRA_GRAPHQL_ENDPOINT,
-  fetch: customFetch,
-});
-
+console.log(process.env.REACT_APP_ASTRA_GRAPHQL_ENDPOINT);
 const client = new ApolloClient({
-  link: ApolloLink.from([fetchLink]),
+  link: new HttpLink({
+    uri: process.env.REACT_APP_ASTRA_GRAPHQL_ENDPOINT,
+    headers: {
+      "x-cassandra-token": process.env.REACT_APP_ASTRA_DB_APPLICATION_TOKEN,
+    },
+  }),
   cache: new InMemoryCache(),
 });
 

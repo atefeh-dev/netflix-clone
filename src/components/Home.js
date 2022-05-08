@@ -1,6 +1,13 @@
 /** @format */
 import React from "react";
-const Home = () => {
-  return <h1>Hello there g!</h1>;
+const Home = ({ values }) => {
+  return (
+    <div>
+      {values.map((value, index) => {
+        return <p key={index}>{value.value}</p>;
+      })}
+    </div>
+  );
 };
+
 export default Home;

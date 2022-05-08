@@ -1,6 +1,7 @@
 /** @format */
 import React from "react";
 const Home = ({ values }) => {
+  console.log("hi");
   return (
     <div>
       {values.map((value, index) => {

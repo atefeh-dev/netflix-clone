@@ -2,8 +2,8 @@
 import { useQuery, gql } from "@apollo/client";
 
 const GET_Movie = gql`
-  query {
-    movie_by_genre(value: { genre: "Action" }, orderBy: [year_DESC]) {
+  query GET_Movie($genre: String!) {
+    movie_by_genre(value: { genre: $genre }, orderBy: [year_DESC]) {
       values {
         genre
         title
@@ -14,9 +14,12 @@ const GET_Movie = gql`
     }
   }
 `;
-export const useMovie = () => {
-  const { error, loading, data } = useQuery(GET_Movie);
-
+export const useMovie = (genre) => {
+  const { error, loading, data } = useQuery(GET_Movie, {
+    variables: {
+      genre,
+    },
+  });
   return {
     error,
     loading,

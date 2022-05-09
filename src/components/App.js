@@ -1,17 +1,19 @@
 /** @format */
 
-import Home from "./Home";
+import Section from "./Section";
 import React from "react";
-import { useMovie } from "../hook/useMovie";
+import { useGenre } from "../hook/useGenre";
 
 const App = () => {
-  const { error, loading, data } = useMovie();
+  const { error, loading, data } = useGenre();
   if (loading) return <div>spinner...</div>;
   if (error) return <div> something is wrong ...</div>;
   else {
     return (
-      <div>
-        <Home values={data.movie_by_genre.values} />
+      <div className="Container">
+        {data.reference_list.values.map((genre) => {
+          return <Section genre={genre.value} />;
+        })}
       </div>
     );
   }

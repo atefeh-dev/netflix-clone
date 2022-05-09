@@ -1,0 +1,6 @@
+/** @format */
+
+.movie_section {
+  display: flex;
+  flex-wrap: wrap;
+}

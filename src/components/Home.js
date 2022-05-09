@@ -1,11 +1,11 @@
 /** @format */
 import React from "react";
+import Card from "./Card";
 const Home = ({ values }) => {
-  console.log("hi");
   return (
-    <div>
+    <div className="movie_section">
       {values.map((value, index) => {
-        return <p key={index}>{value.value}</p>;
+        return <Card movie={value} key={index} />;
       })}
     </div>
   );

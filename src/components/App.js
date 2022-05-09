@@ -2,16 +2,16 @@
 
 import Home from "./Home";
 import React from "react";
-import { useGenre } from "../hook/useGenre";
+import { useMovie } from "../hook/useMovie";
 
 const App = () => {
-  const { error, loading, data } = useGenre();
+  const { error, loading, data } = useMovie();
   if (loading) return <div>spinner...</div>;
   if (error) return <div> something is wrong ...</div>;
   else {
     return (
       <div>
-        <Home values={data.reference_list.values} />
+        <Home values={data.movie_by_genre.values} />
       </div>
     );
   }

@@ -10,6 +10,7 @@ import reducers from "./store/reducers";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { BrowserRouter } from "react-router-dom";
 import { HttpLink } from "@apollo/client";
+import "../src/style/Home.css";
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 

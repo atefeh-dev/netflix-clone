@@ -11,8 +11,8 @@ const App = () => {
   else {
     return (
       <div className="Container">
-        {data.reference_list.values.map((genre) => {
-          return <Section genre={genre.value} />;
+        {data.reference_list.values.map((genre, index) => {
+          return <Section genre={genre.value} key={index} />;
         })}
       </div>
     );

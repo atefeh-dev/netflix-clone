@@ -3,7 +3,11 @@ import { useQuery, gql } from "@apollo/client";
 
 const GET_Movie = gql`
   query GET_Movie($genre: String!) {
-    movie_by_genre(value: { genre: $genre }, orderBy: [year_DESC]) {
+    movie_by_genre(
+      value: { genre: $genre }
+      orderBy: [year_DESC]
+      options: { pageSize: 5 }
+    ) {
       values {
         genre
         title
@@ -11,6 +15,7 @@ const GET_Movie = gql`
         duration
         synopsis
       }
+      pageState
     }
   }
 `;

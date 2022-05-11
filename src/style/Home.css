@@ -6,3 +6,14 @@
 h2 {
   background-color: blueviolet;
 }
+.card {
+  width: 200px;
+}
+video {
+  width: 200px;
+}
+.more-button {
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
+}

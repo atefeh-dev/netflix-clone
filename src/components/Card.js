@@ -4,7 +4,7 @@ import React from "react";
 
 const Card = ({ movie }) => {
   return (
-    <div>
+    <div className="card">
       <h3>{movie.title}</h3>
       <h3>{movie.duration}</h3>
       <video className="video">

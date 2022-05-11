@@ -15,6 +15,9 @@ const Section = ({ genre }) => {
         {data.movie_by_genre.values.map((movie, index) => {
           return <Card movie={movie} key={index} />;
         })}
+        <div>
+          <button className="more-button">more ...</button>
+        </div>
       </div>
     </div>
   );

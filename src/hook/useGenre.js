@@ -3,7 +3,7 @@ import { useQuery, gql } from "@apollo/client";
 
 const GET_Genre = gql`
   query GetGere {
-    reference_list {
+    genre_list {
       values {
         value
       }

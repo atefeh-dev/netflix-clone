@@ -2,16 +2,20 @@
 import { useQuery, gql } from "@apollo/client";
 
 const GET_Genre = gql`
-  query GetGere {
-    genre_list {
+  query GetGere($limit: Int!) {
+    genre_list(value: { lable: "genre" }, options: { limit: $limit }) {
       values {
         value
       }
     }
   }
 `;
-export const useGenre = (id) => {
-  const { error, loading, data } = useQuery(GET_Genre);
+export const useGenre = (limit) => {
+  const { error, loading, data } = useQuery(GET_Genre, {
+    variables: {
+      limit,
+    },
+  });
 
   return {
     error,

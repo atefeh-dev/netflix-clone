@@ -17,3 +17,8 @@ video {
   height: 100px;
   background-color: blueviolet;
 }
+.end-section {
+  background-color: cadetblue;
+  width: 100%;
+  height: 50px;
+}

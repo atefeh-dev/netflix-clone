@@ -5,8 +5,6 @@ import React from "react";
 const Card = ({ movie }) => {
   return (
     <div className="card">
-      <h3>{movie.title}</h3>
-      <h3>{movie.duration}</h3>
       <video className="video">
         <source src={movie.thumbnail} type="video/mp4" />
       </video>

@@ -6,7 +6,7 @@ const GET_Movie = gql`
     movie_by_genre(
       value: { genre: $genre }
       orderBy: [year_DESC]
-      options: { pageSize: 3, pageState: $pageState }
+      options: { pageSize: 6, pageState: $pageState }
     ) {
       values {
         genre

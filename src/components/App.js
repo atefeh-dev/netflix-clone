@@ -3,6 +3,8 @@
 import Section from "./Section";
 import React, { useState } from "react";
 import { useGenre } from "../hook/useGenre";
+import HeroSection from "../components/HeroSection";
+import NavBar from "../components/NavBar";
 
 const App = () => {
   const incrementLimit = 4;
@@ -13,17 +15,21 @@ const App = () => {
   else {
     console.log(limit);
     return (
-      <div className="Container">
-        {data.genre_list.values.map((genre, index) => {
-          return <Section genre={genre.value} key={index} />;
-        })}
-        <div
-          className="end-section"
-          onMouseEnter={() => {
-            setLimit(limit + incrementLimit);
-          }}
-        />
-      </div>
+      <>
+        <NavBar />
+        <HeroSection />
+        <div className="Container">
+          {data.genre_list.values.map((genre, index) => {
+            return <Section genre={genre.value} key={index} />;
+          })}
+          <div
+            className="end-section"
+            onMouseEnter={() => {
+              setLimit(limit + incrementLimit);
+            }}
+          />
+        </div>
+      </>
     );
   }
 };

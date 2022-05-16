@@ -17,12 +17,12 @@ const Card = ({ movie }) => {
       )}
 
       {isShown && (
-        <>
+        <div className="video-container">
           <video className="video" controls autoPlay={true} loop>
             <source src={movie.thumbnail} type="video/mp4" />
           </video>
-          <div className="info-box"></div>
-        </>
+          <div className="overlay">{movie.title}</div>
+        </div>
       )}
     </div>
   );

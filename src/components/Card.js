@@ -21,7 +21,10 @@ const Card = ({ movie }) => {
           <video className="video" controls autoPlay={true} loop>
             <source src={movie.thumbnail} type="video/mp4" />
           </video>
-          <div className="overlay">{movie.title}</div>
+          <div className="overlay">
+            <h3>{movie.title}</h3>
+            <h4>{movie.duration}</h4>
+          </div>
         </div>
       )}
     </div>

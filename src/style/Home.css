@@ -183,6 +183,7 @@ a {
 }
 .video-container:hover .overlay {
   opacity: 1;
+  top: 0;
 }
 @media screen and (max-width: 976px) {
   .info-section {

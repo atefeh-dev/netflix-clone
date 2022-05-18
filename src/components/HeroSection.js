@@ -15,30 +15,31 @@ const HeroSection = () => {
     console.log(movie);
 
     return (
-      <>
-        <div className="hero">
+      <div className="top">
+        <div className="video-container">
           <video className="hero-video" muted controls autoPlay={true} loop>
             <source src={movie.thumbnail} type="video/mp4" />
           </video>
           <div className="info-section">
-            <h3 className="hero-blurb">{movie.synopsis}</h3>
+            <h1>{movie.title}</h1>
+            <p className="hero-blurb">{movie.synopsis}</p>
             <div className="button-section">
               <div className="button play">
-                <span>
-                  <i className="fas fa-play"></i>
-                </span>
                 Play
+                <div style={{ paddingLeft: "5px" }}>
+                  <i class="fa-solid fa-circle-play"></i>
+                </div>
               </div>
               <div className="button more">
-                <span>
-                  <i className="fas fa-info-circle"></i>
-                </span>
                 More info
+                <div style={{ paddingLeft: "5px" }}>
+                  <i className="fas fa-info-circle"></i>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 };
